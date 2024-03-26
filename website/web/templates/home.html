@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} My Home Page {% endblock %}
+
+{% block content %}
+    <h2>Hello Welcome</h2>
+    <p>our new page...welcome</p>
+    <p>fgsfhanfjcaijdfnjdgnajdvnvjkdn</p>
+    <img src="{% static 'image/sample.jpeg' %}" alt="">
+    <div>
+        <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Nl4WBBP81HwxNl" async> </script> </form>
+        <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_NdTwVqAhLw9zYa" async> </script> </form>
+    </div>
+{% endblock %}
