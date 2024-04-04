@@ -8,7 +8,10 @@ from django.contrib.auth import login, logout
 
 # Create your views here.
 def home(request):
-    return render(request,'home.html')
+    username = None
+    if request.user.is_authenticated:
+        username = request.user.username
+    return render(request, 'home.html', {'username': username})
 
 def indextem(request):
     return render(request,'indextem.html')
@@ -75,7 +78,7 @@ def uslogin(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('success')
+                return redirect('home') 
     else:
         form = UserLoginForm()
     return render(request, 'login.html', {'form': form})

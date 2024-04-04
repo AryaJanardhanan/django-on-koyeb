@@ -10,6 +10,8 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Login</button>
+        <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+
     </form>
 </body>
 </html>
